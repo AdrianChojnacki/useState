@@ -2,17 +2,14 @@ import React, { useState } from 'react';
 import './App.css';
 
 const App = () => {
-  const [state, setState] = useState({a: 0, b: 10});
+  const [counter, setCounter] = useState(0);
 
-  const handler = () => setState({
-    a: state.a + 1,
-    b: state.b
-  });
+  const handler = () => setCounter(prevValue => prevValue + 1);
 
   return (
     <div onClick={handler}>
-      <p>{state.a}</p>
-      <p>{state.b}</p>
+      <p>Licznik</p>
+      <p>{counter}</p>
     </div>
   );
 }
