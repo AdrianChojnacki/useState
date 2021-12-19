@@ -2,13 +2,17 @@ import React, { useState } from 'react';
 import './App.css';
 
 const App = () => {
-  const [counter, setCounter] = useState(0);
-  const [info, setInfo] = useState('Nie łączymy w jeden state');
+  const [state, setState] = useState({a: 0, b: 10});
+
+  const handler = () => setState({
+    a: state.a + 1,
+    b: state.b
+  });
 
   return (
-    <div>
-      <h1>{counter}</h1>
-      <p>{info}</p>
+    <div onClick={handler}>
+      <p>{state.a}</p>
+      <p>{state.b}</p>
     </div>
   );
 }
